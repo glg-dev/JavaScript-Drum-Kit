@@ -4,8 +4,8 @@ function removeTransition(e) {
 }
 
 function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+  const key = document.querySelector(`div[data-key="${e.key}"]`);
   if (!audio) return; // Si aucun fichier audio ne correspond, arrête la fonction
 
   key.classList.add("playing"); // Ajoute .playing à la div correspondant à la touche jouée
