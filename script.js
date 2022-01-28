@@ -14,5 +14,16 @@ function playSound(e) {
 }
 
 const keys = Array.from(document.querySelectorAll(".key"));
+const sounds = Array.from(document.querySelectorAll("audio"))
+keys.forEach(item => {
+  item.addEventListener("click", () => {
+    sounds.forEach(sound => {
+      if (sound.dataset.key === item.dataset.key) {
+        sound.play()
+      }
+    });
+  })
+});
+
 keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
 window.addEventListener("keydown", playSound);
